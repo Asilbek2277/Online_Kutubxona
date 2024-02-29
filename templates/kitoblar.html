@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Hamma Kitoblar</h1>
+{%for k in kitob%}
+<ul>
+    <li>
+        <a href="/kitob/{{k.id}}/">{{k.nomi}}</a>
+    </li>
+</ul>
+{%endfor%}
+<br>
+<hr>
+<br>
+<form method="post">{%csrf_token%}
+    <label>Nomi: </label>
+    <input type="text" name="nomi">
+    <label>Muallif: </label>
+    <select name="muallif">
+        {%for m in muallif%}
+        <option value="{{m.id}}">
+            {{m.ism}}
+        </option>
+        {%endfor%}
+    </select>
+    <label>Yili: </label>
+    <input type="number" name="yili">
+    <select name="bolim">
+        {%for b in bolim%}
+        <option value="{{b.id}}">
+            {{b.nomi}}
+        </option>
+        {%endfor%}
+    </select>
+    <label>File: </label>
+    <input type="File" name="file">
+    <button>Add</button>
+</form>
+<br>
+<hr>
+
+<a href="/logout/"><button>Logout</button></a><br><hr>
+<a href="/kitoblarim/"><button>Mening Kitoblarim</button></a>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitoblarim</title>
+</head>
+<body>
+<h1>Men qo'shgan kitoblar</h1>
+{%for k in kitoblarim%}
+<ul>
+    <li>
+        {{k.nomi}}
+    </li>
+    <li>
+        {{k.muallif.ism}}
+    </li>
+    <li>
+        {{k.bolim.nomi}}
+    </li>
+    <li>
+        {{k.yili}}
+    </li>
+    <li>
+        {{k.file}}
+    </li>
+</ul>
+{%endfor%}
+
+</body>
+</html>

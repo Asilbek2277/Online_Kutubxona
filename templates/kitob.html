@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kitob</title>
+</head>
+<body>
+<h1>Tanlangan Kitob Ma'lumotlari</h1>
+<ul>
+    <li>
+        {{kitob.nomi}}
+    </li>
+    <li>
+        {{kitob.muallif.ism}}
+    </li>
+    <li>
+        {{kitob.bolim.nomi}}
+    </li>
+    <li>
+        {{kitob.yili}}
+    </li>
+    <li>
+        {{kitob.file}}
+    </li>
+</ul>
+
+<a href="/ochirish/{{kitob.id}}/"><button>Delete</button></a>
+<a href="/edit/{{kitob.id}}/"><button>Edit</button></a>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tahrirlash</h1>
+
+<form method="post">{%csrf_token%}
+    <label>Nomi: </label>
+    <input type="text" name="nomi" value="{{kitob.nomi}}">
+
+    <label>Muallif: </label>
+    <select name="muallif">
+        {%for m in muallif%}
+        <option value="{{m.id}}">
+            {{m.ism}}
+        </option>
+        {%endfor%}
+    </select>
+    <label>Yili: </label>
+    <input type="number" name="yili" value="{{kitob.yili}}">
+    <select name="bolim">
+        {%for b in bolim%}
+        <option value="{{b.id}}">
+            {{b.nomi}}
+        </option>
+        {%endfor%}
+    </select>
+    <label>File: </label>
+    <input type="File" name="file" value="{{kitob.file}}">
+    <a href="/kitoblar/"><button>Edit</button></a>
+</form>
+
+</body>
+</html>
